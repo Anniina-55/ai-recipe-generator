@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Anniina-55/ai-recipe-generator#readme",
   "devDependencies": {
+    "vite": "7.1.4",
     "@aws-amplify/backend": "^1.16.1",
     "@aws-amplify/backend-cli": "^1.8.0",
     "@vitejs/plugin-react": "^5.0.2",
