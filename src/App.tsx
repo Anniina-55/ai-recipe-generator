@@ -4,7 +4,7 @@ import "./App.css";
 import { Amplify } from "aws-amplify";
 import { data, Schema } from "../serverless-temp_backend/amplify/data/resource"; 
 import { generateClient } from "aws-amplify/data";
-import outputs from "./amplify_outputs.json";
+import outputs from "../serverless-temp_backend/amplify/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 
 Amplify.configure(outputs);
