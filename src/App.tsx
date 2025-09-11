@@ -4,16 +4,32 @@ import "./App.css";
 import { Amplify } from "aws-amplify";
 import { data, Schema } from "../serverless-temp_backend/amplify/data/resource"; 
 import { generateClient } from "aws-amplify/data";
-import outputs from "../serverless-temp_backend/amplify/amplify_outputs.json";
+//import outputs from "../serverless-temp_backend/amplify/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 
-Amplify.configure(outputs);
-const amplifyClient = generateClient<Schema>({
-authMode: "userPool",
-});
+import { useEffect, useState } from 'react';
+
+
 function App() {
+const [outputs, setOutputs] = useState<any>(null);
 const [result, setResult] = useState<string>("");
 const [loading, setLoading] = useState(false);
+
+useEffect(() => {
+    fetch('/amplify_outputs.json')
+      .then(res => res.json())
+      .then(data => {setOutputs(data)
+      Amplify.configure(data)
+    })
+      .catch(err => console.error('Failed to load amplify_outputs.json', err));
+  }, []);
+
+const amplifyClient = outputs ? generateClient<Schema>({ authMode: "userPool" }) : null;
+/*Amplify.configure(outputs);
+const amplifyClient = generateClient<Schema>({
+authMode: "userPool",
+});*/
+
 const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
 event.preventDefault();
 setLoading(true);
