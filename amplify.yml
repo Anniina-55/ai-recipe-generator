@@ -1,10 +1,4 @@
 version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - '# Execute Amplify CLI with the path to the backend'
-        - amplify pull --appId d10oihe69xgzf7 --envName dev --amplifyBackendDir ./serverless-temp_backend/amplify
 frontend:
   phases:
     preBuild:
