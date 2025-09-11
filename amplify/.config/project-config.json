@@ -1,13 +1,13 @@
 {
   "whyContinueWithGen1": "I am a current Gen 1 user",
-  "projectName": "serverlessTutorial",
+  "projectName": "aiRecipeGenerator",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
-    "framework": "react",
+    "framework": "none",
     "config": {
       "SourceDir": "src",
-      "DistributionDir": "build",
+      "DistributionDir": "dist",
       "BuildCommand": "npm.cmd run-script build",
       "StartCommand": "npm.cmd run-script start"
     }
